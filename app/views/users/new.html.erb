@@ -1,4 +1,5 @@
 <h1>Signup</h1>
+<!--
 
 <form action="/users" method="post" accept-charset="UTF-8" data-turbo="false">
   <div>
@@ -20,5 +21,26 @@
 
   <div>
     <input type="submit" value="Submit">
+  </div>
+</form>
+-->
+
+<%= form_tag("/users")%>
+
+  <div>
+    <%= label_tag(:username, "Username: ") %>
+    <%= text_field_tag(:username) %><br>
+  </div>
+  <div>
+    <%= label_tag(:email, "Email: ") %>
+    <%= text_field_tag(:email) %><br>
+  </div>
+  <div>
+    <%= label_tag(:password, "Password: ") %>
+    <%= password_field_tag(:password) %><br>
+  </div>
+
+  <div>
+    <%= submit_tag("Submit") %>
   </div>
 </form>
