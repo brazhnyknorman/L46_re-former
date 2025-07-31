@@ -1,0 +1,38 @@
+<h1>Edit Account</h1>
+
+<% if @user.errors.any? %>
+  <div>
+    <%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:
+  </div>
+
+  <div>
+    <ul>
+      <% @user.errors.each do |error| %>
+        <li><%= error.full_message %> </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with method: :patch, model: @user do |form| %>
+  <div>
+    <%= form.label "Username: " %>
+    <%= form.text_field :username, value: @user.username %>
+  </div>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.text_field :email, value: @user.email %>
+  </div>
+
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password%>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %><br>
+
+<%= link_to "Homepage", root_path %>

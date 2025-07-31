@@ -1,0 +1,10 @@
+<h1><%= @user.username %> </h1>
+
+<ul>
+  <li>Email: <%= @user.email %> </li>
+</ul>
+
+<br>
+<%= link_to "Create Account", new_user_path %><br>
+<%= link_to "Edit This Account", edit_user_path(@user.id) %><br>
+<%= link_to "Homepage", root_path %><br>
